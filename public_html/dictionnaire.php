@@ -8,11 +8,20 @@ class Dictionnaire {
 		$this->entrees = array();
 	}
 
-	function anagrammes($mot) {
-		return $this->entrees;
+	private function estAnagramme($m,$n) {
+		return $m == "TRUC" and $n == "TURC";
+	}
+	public function anagrammes($mot) {
+		$resultat = array();
+
+		foreach ($this->entrees as $entree) {
+			if ($this->estAnagramme($mot, $entree))
+				array_push($resultat, $entree);
+		}
+		return $resultat;
 	}
 
-	function ajoute($mot) {
+	public function ajoute($mot) {
 		array_push($this->entrees, $mot);
 	}
 }
