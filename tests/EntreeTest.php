@@ -16,5 +16,10 @@ class EntreeTests extends PHPUnit_Framework_TestCase
     	$f = new Entree("CHIEN");
     	$this->assertEquals("CEHIN", $f->clef());
     }
+
+    public function test_entree_possede_un_mot() {
+        $e = new Entree("CHAT");
+        $this->assertEquals("CHAT",$e->mot());
+    }
 }
 	

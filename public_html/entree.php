@@ -11,5 +11,9 @@ class Entree {
 		sort($a);
 		return implode('',$a);
 	}
+
+	public function mot() {
+		return $this->mot;
+	}
 }
 ?>
