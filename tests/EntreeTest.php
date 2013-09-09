@@ -1,5 +1,5 @@
 <?php
-require './public_html/entree.php';
+require_once './public_html/entree.php';
 
 class EntreeTests extends PHPUnit_Framework_TestCase
 {

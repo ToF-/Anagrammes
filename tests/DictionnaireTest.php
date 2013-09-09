@@ -1,5 +1,5 @@
 <?php
-require './public_html/dictionnaire.php';
+require_once './public_html/dictionnaire.php';
 
 class AnagrammesTests extends PHPUnit_Framework_TestCase
 {
