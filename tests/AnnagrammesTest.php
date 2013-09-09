@@ -37,13 +37,6 @@ class AnagrammesTests extends PHPUnit_Framework_TestCase
     	$this->assertEquals($resultat, $this->dictionnaire->anagrammes("TRUC"));
     }
 
-    public function test_anagramme()
-    {
-    	$this->assertEquals(true,$this->dictionnaire->estAnagramme("TRUC","CRUT"));
-    	$this->assertEquals(true,$this->dictionnaire->estAnagramme("TRUC","TRUC"));
-		$this->assertEquals(false,$this->dictionnaire->estAnagramme("TRUC","CHAT"));
-	}
-
 	public function test_split()
 	{
 		$a = str_split("TRUC");
