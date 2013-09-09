@@ -6,23 +6,22 @@ require_once './public_html/chargeur.php';
 
 class ChargeurTests extends PHPUnit_Framework_TestCase
 {
-	public function test_chargeur_remplit_le_dictionnaire_avec_un_mot() {
-		$data = "TURC\n";
+	public function prepareFicher($data) {
 		file_put_contents("dictionnaire.txt", $data);
-		$chargeur = new Chargeur();
-		$dictionnaire = new dictionnaire();
-		$chargeur->charge("dictionnaire.txt", $dictionnaire);
+		$this->chargeur = new Chargeur();
+		$this->dictionnaire = new dictionnaire();
+		$this->chargeur->charge("dictionnaire.txt", $this->dictionnaire);
+
+	}
+	public function test_chargeur_remplit_le_dictionnaire_avec_un_mot() {
+		$this->prepareFicher("TURC\n");
 		$resultat = array("TURC");
-    	$this->assertEquals($resultat, $dictionnaire->anagrammes("TRUC"));
+    	$this->assertEquals($resultat, $this->dictionnaire->anagrammes("TRUC"));
 	}
 	public function test_chargeur_remplit_le_dictionnaire_avec_N_mots() {
-		$data = "TURC\nCRUT\n";
-		file_put_contents("dictionnaire.txt", $data);
-		$chargeur = new Chargeur();
-		$dictionnaire = new dictionnaire();
-		$chargeur->charge("dictionnaire.txt", $dictionnaire);
+		$this->prepareFicher("TURC\nCRUT\n");
 		$resultat = array("TURC","CRUT");
-    	$this->assertEquals($resultat, $dictionnaire->anagrammes("TRUC"));
+    	$this->assertEquals($resultat, $this->dictionnaire->anagrammes("TRUC"));
 	}
 }
 ?>
