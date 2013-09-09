@@ -28,5 +28,35 @@ class AnagrammesTests extends PHPUnit_Framework_TestCase
     	$resultat = array("TURC");
     	$this->assertEquals($resultat, $this->dictionnaire->anagrammes("TRUC"));
     }
+    public function test_deux_entrees_anagrammes()
+    {
+    	$this->dictionnaire->ajoute("TURC");
+    	$this->dictionnaire->ajoute("CRUT");
+
+    	$resultat = array("TURC","CRUT");
+    	$this->assertEquals($resultat, $this->dictionnaire->anagrammes("TRUC"));
+    }
+
+    public function test_anagramme()
+    {
+    	$this->assertEquals(true,$this->dictionnaire->estAnagramme("TRUC","CRUT"));
+    	$this->assertEquals(true,$this->dictionnaire->estAnagramme("TRUC","TRUC"));
+		$this->assertEquals(false,$this->dictionnaire->estAnagramme("TRUC","CHAT"));
+	}
+
+	public function test_split()
+	{
+		$a = str_split("TRUC");
+		sort($a);
+		$this->assertEquals("CRTU",implode('',$a));
+		
+	}
+    public function test_sortString()
+    {
+        $string = "bac";
+        $stringParts = str_split($string);
+        sort($stringParts);
+        $this->assertEquals("abc", implode('',$stringParts));
+    }
 }
 ?>

@@ -8,8 +8,12 @@ class Dictionnaire {
 		$this->entrees = array();
 	}
 
-	private function estAnagramme($m,$n) {
-		return $m == "TRUC" and $n == "TURC";
+	public function estAnagramme($m,$n) {
+		$s = str_split($m);
+		$t = str_split($n);
+		sort($s);
+		sort($t);
+		return implode('',$s) == implode('',$t);
 	}
 	public function anagrammes($mot) {
 		$resultat = array();
