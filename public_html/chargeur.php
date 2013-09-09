@@ -1,7 +1,8 @@
 <?php
 class Chargeur {
 	public function charge($fichier, $dictionnaire) {
-		$dictionnaire->ajoute("TURC");
+		$data = file_get_contents($fichier);
+		$dictionnaire->ajoute($data);
 	} 
 }
 

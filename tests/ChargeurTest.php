@@ -4,7 +4,7 @@ require './public_html/chargeur.php';
 class ChargeurTests extends PHPUnit_Framework_TestCase
 {
 	public function test_chargeur_remplit_le_dictionnaire() {
-		$data = "TURC\n";
+		$data = "TURC";
 		file_put_contents("dictionnaire.txt", $data);
 		$chargeur = new Chargeur();
 		$dictionnaire = new dictionnaire();
