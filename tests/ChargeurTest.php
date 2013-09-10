@@ -27,7 +27,7 @@ class ChargeurTest extends PHPUnit_Framework_TestCase
 		$chargeur = new Chargeur();
 		$dictionnaire = new dictionnaire();
 		$chargeur->charge('./public_html/ukwords.txt', $dictionnaire);
-    	$this->assertEquals(array("god"), $dictionnaire->anagrammes("dog"));
+    	$this->assertEquals(array('nastier','retains','retinas','retsina','stainer'), $dictionnaire->anagrammes("restain"));
 	}
 }
 ?>
