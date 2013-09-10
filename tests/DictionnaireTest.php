@@ -51,5 +51,12 @@ class DictionnaireTest extends PHPUnit_Framework_TestCase
         sort($stringParts);
         $this->assertEquals("abc", implode('',$stringParts));
     }
+
+    public function test_exclut_auto_anagrammes()
+    {
+        $this->dictionnaire->ajoute("TRUC");
+        $this->dictionnaire->ajoute("CRUT");
+        $this->assertEquals(array("TRUC"), $this->dictionnaire->anagrammes("CRUT"));
+    }
 }
 ?>

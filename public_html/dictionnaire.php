@@ -10,7 +10,7 @@ class Dictionnaire {
 
 	public function estAnagramme($mot,$entree) {
 		$autreEntree = new Entree($mot);
-		return $autreEntree->clef() == $entree->clef();
+		return $autreEntree->clef() == $entree->clef() and $mot != $entree->mot();
 	}
 	public function anagrammes($mot) {
 		$resultat = array();
