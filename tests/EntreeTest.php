@@ -1,7 +1,7 @@
 <?php
 require_once './public_html/entree.php';
 
-class EntreeTests extends PHPUnit_Framework_TestCase
+class EntreeTest extends PHPUnit_Framework_TestCase
 {
 	public function test_entree_possede_une_clef()
     {

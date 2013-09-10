@@ -4,7 +4,7 @@ require_once './public_html/dictionnaire.php';
 require_once './public_html/chargeur.php';
 
 
-class ChargeurTests extends PHPUnit_Framework_TestCase
+class ChargeurTest extends PHPUnit_Framework_TestCase
 {
 	public function prepareFicher($data) {
 		file_put_contents("dictionnaire.txt", $data);
