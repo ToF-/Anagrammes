@@ -16,8 +16,8 @@ $mot = htmlspecialchars($_POST['mot']);
 echo "anagrammes du mot {$mot}:";
 $anagrammes = $dictionnaire->anagrammes($mot);
 
-echo "<div id=\"table\">";
-echo "<table>";
+echo "<div id=\"table\" >";
+echo "<table border=\"1\" cellpadding=\"10\" >";
 foreach ($anagrammes as $anagramme) {
 	echo "<tr><td>";
 	echo $anagramme;

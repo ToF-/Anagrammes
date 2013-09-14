@@ -1,13 +1,8 @@
 body {
-  font-family: Monaco, "DejaVu Sans Mono", "Lucida Console", monospace;
+  font-family: "Arial";
 }
 
 #table {
-  position: relative;
-  text-align: center;
-  border: 2px solid #3399ff;
-  font-size: 64px;
-  font-family: Monaco, "DejaVu Sans Mono", "Lucida Console", monospace;
   color: #0066cc;
   background: #ffffee;
 }
