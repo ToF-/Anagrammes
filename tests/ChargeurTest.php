@@ -23,11 +23,5 @@ class ChargeurTest extends PHPUnit_Framework_TestCase
 		$resultat = array("TURC","CRUT");
     	$this->assertEquals($resultat, $this->dictionnaire->anagrammes("TRUC"));
 	}
-	public function test_charge_remplit_un_dictionnaire_de_57000_mots() {
-		$chargeur = new Chargeur();
-		$dictionnaire = new dictionnaire();
-		$chargeur->charge('./public_html/ukwords.txt', $dictionnaire);
-    	$this->assertEquals(array('nastier','retains','retinas','retsina','stainer'), $dictionnaire->anagrammes("restain"));
-	}
 }
 ?>
